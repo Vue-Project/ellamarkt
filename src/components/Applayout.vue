@@ -1,14 +1,13 @@
 <template>
-    <div class="layout">
-        <v-layout>
-            <CardDrawer />
-            <v-main>
-                <slot></slot>
-            </v-main>
-            <AppHeader />
-            <AppFooter />
-        </v-layout>
-    </div>
+    <v-layout>
+        <AppHeader />
+        <CardDrawer />
+
+        <v-main>
+            <slot></slot>
+        </v-main>
+        <AppFooter />
+    </v-layout>
 </template>
 <script>
 import AppHeader from "@/components/layouts/partial/partial/AppHeader.vue";
@@ -27,4 +26,4 @@ export default {
     },
 };
 </script>
-<style lang=""></style>
+<style lang="scss"></style>
