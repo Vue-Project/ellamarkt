@@ -37,4 +37,7 @@ nav {
 .v-main {
     padding-top: 140px !important;
 }
+.v-layout {
+    position: relative;
+}
 </style>

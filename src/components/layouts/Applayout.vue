@@ -4,6 +4,7 @@
             <CardDrawer />
             <v-main><slot></slot></v-main>
             <AppHeader />
+            <FixedNavbar />
             <AppFooter />
         </v-layout>
     </div>
@@ -12,6 +13,7 @@
 import AppHeader from "@/components/layouts/partial/AppHeader.vue";
 import AppFooter from "@/components/layouts/partial/AppFooter.vue";
 import CardDrawer from "@/components/layouts/partial/CardDrawer.vue";
+import FixedNavbar from "@/components/layouts/partial/FixedNavbar.vue";
 export default {
     data() {
         return {
@@ -22,6 +24,7 @@ export default {
         AppHeader,
         AppFooter,
         CardDrawer,
+        FixedNavbar,
     },
 };
 </script>

@@ -1,6 +1,6 @@
-<template lang="">
+<template>
     <div class="app-footer">
-        <v-footer :app="true">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo, ut.</v-footer>
+        <v-footer :app="true" absolute>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo, ut.</v-footer>
     </div>
 </template>
 <script>
