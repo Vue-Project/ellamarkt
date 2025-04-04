@@ -1,6 +1,6 @@
 <template>
     <div class="app-header">
-        <v-app-bar color="#151880">
+        <v-app-bar color="#151880" absolute>
             <!-- <v-app-bar-nav-icon @click="openCart"></v-app-bar-nav-icon> -->
             <v-container fluid>
                 <v-row>
@@ -51,14 +51,14 @@
                     </v-col>
                     <v-col cols="2"></v-col>
                     <v-col cols="4">
-                        <div class="bottom-header-right d-flex justify-end" id="lang-btn">
+                        <div class="bottom-header-right d-flex justify-end">
                             <div class="helper d-flex align-items-center mr-5">
                                 <span>
                                     <PersonCallIcon />
                                 </span>
                                 <p>help</p>
                             </div>
-                            <div class="lang d-flex align-items-center">
+                            <div class="lang d-flex align-items-center" id="lang-btn">
                                 <span>
                                     <v-icon v-if="!selectedLang.length"><img src="@/assets/SVGS/en-lang.svg" alt="" /></v-icon>
                                     <img v-else style="width: 20px; height: 20px" :src="require(`@/assets/SVGS/${selectedLang[0].icon}`)" :alt="selectedLang[0].lang" />
