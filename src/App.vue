@@ -40,4 +40,7 @@ nav {
 .v-layout {
     position: relative;
 }
+.v-btn {
+    text-transform: none;
+}
 </style>
