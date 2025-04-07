@@ -5,18 +5,20 @@
         </div>
         <v-container>
             <div class="categories pt-13">
-                <div class="d-flex justify-center align-center px-5">
-                    <h3 class="text-center flex-grow-1 mb-4">Top Categories</h3>
+                <div class="title px-5">
+                    <h3 class="text-center f mb-4">Top Categories</h3>
                     <a href="#" class="text-black">Shop All</a>
                 </div>
                 <v-container>
                     <v-row>
                         <v-col cols="2" v-for="cat in categories" :key="cat.tile">
                             <v-card class="text-center" elevation="0">
-                                <v-hover v-slot="{ isHovering, props }">
-                                    <div class="img-parent">
-                                        <img :src="cat.image" :alt="cat.title" v-bind="props" :style="` transition: 0.4s all ease-in-out; scale: ${isHovering ? 1.05 : 1}`" />
-                                    </div>
+                                <v-hover>
+                                    <template v-slot:default="{ isHovering, props }">
+                                        <div class="img-parent">
+                                            <img :src="cat.image" :alt="cat.title" v-bind="props" :style="` transition: 0.4s all ease-in-out; scale: ${isHovering ? 1.05 : 1}`" />
+                                        </div>
+                                    </template>
                                 </v-hover>
                                 <v-card-text>{{ cat.title }}</v-card-text>
                             </v-card>
@@ -86,7 +88,7 @@ export default {
     },
 };
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .categories {
     h3 {
         font-weight: 900;
@@ -101,5 +103,11 @@ export default {
     overflow: hidden;
     width: 100%;
     height: 200px;
+}
+.title {
+    h3 {
+        flex-grow: 1;
+        color: #202020;
+    }
 }
 </style>

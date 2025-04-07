@@ -4,6 +4,7 @@
     <TopOffer />
     <ProductSwiper :products="flashDeals" />
     <TopCategories />
+    <NewProduct :products="beautyDeals" />
 </template>
 
 <script>
@@ -13,6 +14,7 @@ import TheFeatures from "@/components/home/TheFeatures.vue";
 import TopOffer from "@/components/home/TopOffers.vue";
 import ProductSwiper from "@/components/home/ProductSwiper.vue";
 import TopCategories from "@/components/home/TopCategories.vue";
+import NewProduct from "@/components/home/NewProduct.vue";
 import { useProductModules } from "../stores/productModules";
 import { mapActions, mapState } from "pinia";
 
@@ -24,12 +26,13 @@ export default {
         TopOffer,
         ProductSwiper,
         TopCategories,
+        NewProduct,
     },
     methods: {
         ...mapActions(useProductModules, ["getFlashDeals"]),
     },
     computed: {
-        ...mapState(useProductModules, ["flashDeals"]),
+        ...mapState(useProductModules, ["flashDeals", "beautyDeals"]),
     },
     async mounted() {
         await this.getFlashDeals();
