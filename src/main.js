@@ -13,6 +13,10 @@ import * as directives from "vuetify/directives";
 // mitt
 import mitt from "mitt";
 const Emitter = mitt();
+// swiper config
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 const vuetify = createVuetify({
     components,

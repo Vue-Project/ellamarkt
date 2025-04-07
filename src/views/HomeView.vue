@@ -2,7 +2,7 @@
     <HeroSection />
     <TheFeatures />
     <TopOffer />
-    <FlashDeals :products="flashDeals" />
+    <ProductSwiper :products="flashDeals" />
 </template>
 
 <script>
@@ -10,7 +10,7 @@
 import HeroSection from "@/components/home/HeroSection.vue";
 import TheFeatures from "@/components/home/TheFeatures.vue";
 import TopOffer from "@/components/home/TopOffers.vue";
-import FlashDeals from "@/components/home/FlashDeals.vue";
+import ProductSwiper from "@/components/home/ProductSwiper.vue";
 import { useProductModules } from "../stores/productModules";
 import { mapActions, mapState } from "pinia";
 
@@ -20,7 +20,7 @@ export default {
         HeroSection,
         TheFeatures,
         TopOffer,
-        FlashDeals,
+        ProductSwiper,
     },
     methods: {
         ...mapActions(useProductModules, ["getFlashDeals"]),
