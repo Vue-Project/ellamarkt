@@ -1,7 +1,7 @@
 <template>
     <section class="product-swiper pt-16">
         <v-container>
-            <div class="title-section">
+            <div class="title">
                 <h2>Flash Deals</h2>
                 <a href="#">Show All</a>
             </div>
@@ -113,7 +113,7 @@ export default {
         height: 12px;
     }
 }
-.title-section {
+.title {
     display: flex;
     justify-content: space-between;
     align-items: center;
