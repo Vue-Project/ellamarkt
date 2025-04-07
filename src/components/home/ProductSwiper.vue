@@ -25,8 +25,9 @@
                                 :style="` transition: 0.5s all ease-in-out; scale: ${isHovering ? 1.05 : 1}`"
                             />
                         </v-hover>
-                        <v-card-text class="px-0 pb-0">
-                            ({{ product.title }}){{ product.description.split(" ").length <= 8 ? product.description : product.description.split(" ").slice(0, 9).join(" ") + "..." }}
+                        <v-card-text class="dec-text px-0 pb-0">
+                            <!-- ({{ product.title }}){{ product.description.split(" ").length <= 8 ? product.description : product.description.split(" ").slice(0, 9).join(" ") + "..." }} -->
+                            ({{ product.title }}){{ product.description }}
                         </v-card-text>
                         <v-rating class="pb-0" v-model="product.rating" hover length="5" half-increments readonly density="compact" :size="20" color="yellow darken-3"></v-rating>
                         <v-card-text class="px-0 pt-0" pt-0>
@@ -127,5 +128,13 @@ export default {
     a {
         color: #202020;
     }
+}
+.dec-text {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
 }
 </style>
