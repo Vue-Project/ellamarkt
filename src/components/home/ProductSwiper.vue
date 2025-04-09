@@ -2,7 +2,7 @@
     <section class="product-swiper pt-16">
         <v-container>
             <div class="title">
-                <h2>Flash Deals</h2>
+                <h2 :class="`text-${titleColor}`">{{ title }}</h2>
                 <a href="#">Show All</a>
             </div>
             <Swiper
@@ -70,6 +70,15 @@ export default {
         products: {
             type: Array,
             isrequired: false,
+        },
+        title: {
+            type: String,
+            isrequired: false,
+        },
+        titleColor: {
+            type: String,
+            isrequired: false,
+            default: "red",
         },
     },
     setup() {

@@ -2,10 +2,15 @@
     <HeroSection />
     <TheFeatures />
     <TopOffer />
-    <ProductSwiper :products="flashDeals" />
+    <ProductSwiper :products="flashDeals" :title="'Flash Deals'" :titleColor="'red'" />
     <TopCategories />
     <NewProduct :products="beautyDeals" />
     <QualityFeatures />
+    <ProductSwiper :products="furnitureDeals" :title="'Top Furniture'" :titleColor="'black'" />
+    <BannerSection />
+    <ProductSwiper :products="groceriesDeals" :title="'Top groceries'" :titleColor="'black'" />
+    <BannerTV />
+    <ProductSwiper :products="fragrancesDeals" :title="'Top fragrances'" :titleColor="'black'" />
 </template>
 
 <script>
@@ -17,6 +22,9 @@ import ProductSwiper from "@/components/home/ProductSwiper.vue";
 import TopCategories from "@/components/home/TopCategories.vue";
 import NewProduct from "@/components/home/NewProduct.vue";
 import QualityFeatures from "@/components/home/QualityFeatures.vue";
+import BannerSection from "@/components/home/BannerSection.vue";
+import BannerTV from "@/components/home/BannerTV.vue";
+
 import { useProductModules } from "../stores/productModules";
 import { mapActions, mapState } from "pinia";
 
@@ -30,12 +38,14 @@ export default {
         TopCategories,
         NewProduct,
         QualityFeatures,
+        BannerSection,
+        BannerTV,
     },
     methods: {
         ...mapActions(useProductModules, ["getFlashDeals"]),
     },
     computed: {
-        ...mapState(useProductModules, ["flashDeals", "beautyDeals"]),
+        ...mapState(useProductModules, ["flashDeals", "beautyDeals", "furnitureDeals", "groceriesDeals", "fragrancesDeals"]),
     },
     async mounted() {
         await this.getFlashDeals();
