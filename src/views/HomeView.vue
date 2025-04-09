@@ -11,6 +11,7 @@
     <ProductSwiper :products="groceriesDeals" :title="'Top groceries'" :titleColor="'black'" />
     <BannerTV />
     <ProductSwiper :products="fragrancesDeals" :title="'Top fragrances'" :titleColor="'black'" />
+    <ShopWithUs />
 </template>
 
 <script>
@@ -24,6 +25,7 @@ import NewProduct from "@/components/home/NewProduct.vue";
 import QualityFeatures from "@/components/home/QualityFeatures.vue";
 import BannerSection from "@/components/home/BannerSection.vue";
 import BannerTV from "@/components/home/BannerTV.vue";
+import ShopWithUs from "@/components/home/ShopWIthUs.vue";
 
 import { useProductModules } from "../stores/productModules";
 import { mapActions, mapState } from "pinia";
@@ -40,6 +42,7 @@ export default {
         QualityFeatures,
         BannerSection,
         BannerTV,
+        ShopWithUs,
     },
     methods: {
         ...mapActions(useProductModules, ["getFlashDeals"]),
