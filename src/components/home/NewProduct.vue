@@ -5,8 +5,11 @@
             <a href="#">Show All</a>
         </div>
         <v-row>
+            <!-- <v-col cols="7"></v-col> -->
+
             <v-col cols="7" class="pt-15">
-                <Swiper :pagination="{ el: '.swiper-pagination', clickable: true }" :modules="modules" :slides-per-view="3" :space-between="35" class="pb-12 px-5" :autoplay="{ delay: 3000 }">
+                <Loader :columnNumber="4" :NumberOfSkeleton="3" v-if="!products || products.length === 0" />
+                <Swiper v-else :pagination="{ el: '.swiper-pagination', clickable: true }" :modules="modules" :slides-per-view="3" :space-between="35" class="pb-12 px-5" :autoplay="{ delay: 3000 }">
                     <SwiperSlide v-for="product in products" :key="product.id">
                         <v-card elevation="0" class="pb-5">
                             <v-hover v-slot="{ isHovering, props }">
@@ -51,6 +54,7 @@
 <script>
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Autoplay, Pagination } from "swiper";
+import Loader from "../Shared/Loader.vue";
 export default {
     name: "NewProduct",
 
@@ -62,6 +66,7 @@ export default {
     components: {
         Swiper,
         SwiperSlide,
+        Loader,
     },
     props: {
         products: {

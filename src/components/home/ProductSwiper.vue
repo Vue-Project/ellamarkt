@@ -5,7 +5,9 @@
                 <h2 :class="`text-${titleColor}`">{{ title }}</h2>
                 <a href="#">Show All</a>
             </div>
+            <Loader :columnNumber="3" :NumberOfSkeleton="4" v-if="!products || products.length === 0" />
             <Swiper
+                v-else
                 :pagination="{ el: '.swiper-pagination', clickable: true }"
                 :modules="modules"
                 :slides-per-view="4"
@@ -54,6 +56,7 @@
 <script>
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Autoplay, Navigation, Pagination } from "swiper";
+import Loader from "../Shared/Loader.vue";
 
 export default {
     name: "ProductSwiper",
@@ -65,6 +68,7 @@ export default {
     components: {
         Swiper,
         SwiperSlide,
+        Loader,
     },
     props: {
         products: {
